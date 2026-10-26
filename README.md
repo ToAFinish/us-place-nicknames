@@ -7,7 +7,7 @@ Examples are "The Lone Star State" (Texas) and "The Ozone Belt" (St. Tammany Par
 |------|-------|-------:|----------:|
 | [`data/states.csv`](data/states.csv) | State | 50 | 912 |
 | [`data/counties.csv`](data/counties.csv) | County | 240 | 430 |
-| [`data/cities.csv`](data/cities.csv) | City and town | 2,881 | 9,840 |
+| [`data/cities.csv`](data/cities.csv) | City and town | 2,881 | 9,782 |
 
 ## Get the data
 
