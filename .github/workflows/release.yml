@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check data files
+        run: python scripts/validate.py
+      - name: Build download files
+        run: python scripts/build.py
+      - name: Make release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            dist/us-place-nicknames.zip dist/all_nicknames.csv dist/nicknames.json \
+            dist/state_nicknames_combined.csv dist/county_nicknames_combined.csv dist/city_nicknames_combined.csv \
+            data/states.csv data/counties.csv data/cities.csv \
+            --title "$GITHUB_REF_NAME" --generate-notes

@@ -1,0 +1,177 @@
+{
+  "name": "us-place-nicknames",
+  "title": "US Place Nicknames",
+  "version": "1.0.0",
+  "description": "Nicknames for US states, counties, and cities. Each row contains one nickname for one place.",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/",
+      "title": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "resources": [
+    {
+      "name": "states",
+      "path": "data/states.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "state",
+            "type": "string",
+            "description": "Two-letter USPS state code",
+            "constraints": {
+              "required": true,
+              "pattern": "^[A-Z]{2}$"
+            }
+          },
+          {
+            "name": "state_name",
+            "type": "string",
+            "description": "Name of the state",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "nickname",
+            "type": "string",
+            "description": "One nickname for the place",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "description": "Where the nickname comes from (URL or citation)"
+          },
+          {
+            "name": "notes",
+            "type": "string",
+            "description": "Other information"
+          }
+        ],
+        "primaryKey": [
+          "state",
+          "nickname"
+        ]
+      }
+    },
+    {
+      "name": "counties",
+      "path": "data/counties.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "state",
+            "type": "string",
+            "description": "Two-letter USPS state code",
+            "constraints": {
+              "required": true,
+              "pattern": "^[A-Z]{2}$"
+            }
+          },
+          {
+            "name": "county",
+            "type": "string",
+            "description": "County name without the type word",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "county_type",
+            "type": "string",
+            "description": "County, Parish, Borough, Independent City, or another Census type"
+          },
+          {
+            "name": "county_fips",
+            "type": "string",
+            "description": "Five-digit FIPS code (2020 Census)",
+            "constraints": {
+              "pattern": "^[0-9]{5}$"
+            }
+          },
+          {
+            "name": "nickname",
+            "type": "string",
+            "description": "One nickname for the place",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "description": "Where the nickname comes from (URL or citation)"
+          },
+          {
+            "name": "notes",
+            "type": "string",
+            "description": "Other information"
+          }
+        ],
+        "primaryKey": [
+          "state",
+          "county",
+          "nickname"
+        ]
+      }
+    },
+    {
+      "name": "cities",
+      "path": "data/cities.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "state",
+            "type": "string",
+            "description": "Two-letter USPS state code",
+            "constraints": {
+              "required": true,
+              "pattern": "^[A-Z]{2}$"
+            }
+          },
+          {
+            "name": "city",
+            "type": "string",
+            "description": "Name of the city, town, or village",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "nickname",
+            "type": "string",
+            "description": "One nickname for the place",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "description": "Where the nickname comes from (URL or citation)"
+          },
+          {
+            "name": "notes",
+            "type": "string",
+            "description": "Other information"
+          }
+        ],
+        "primaryKey": [
+          "state",
+          "city",
+          "nickname"
+        ]
+      }
+    }
+  ]
+}

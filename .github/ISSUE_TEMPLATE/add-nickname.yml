@@ -1,0 +1,47 @@
+name: Add a nickname
+description: Send a nickname that is not in the dataset.
+title: "Add: "
+labels: ["new nickname"]
+body:
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options:
+        - State
+        - County
+        - City or town
+    validations:
+      required: true
+  - type: input
+    id: state
+    attributes:
+      label: State
+      description: Two-letter code, for example TX.
+      placeholder: TX
+    validations:
+      required: true
+  - type: input
+    id: place
+    attributes:
+      label: County or city name
+      description: Leave this empty for a state nickname. Do not write "County".
+      placeholder: Austin
+  - type: textarea
+    id: nicknames
+    attributes:
+      label: Nickname(s)
+      description: Write one nickname on each line. Keep the original words and capitals.
+      placeholder: The Live Music Capital of the World
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A URL, or a book title with the page number.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Other information, for example the years when people used the nickname.

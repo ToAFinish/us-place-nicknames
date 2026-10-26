@@ -1,0 +1,29 @@
+name: Report an error
+description: Tell us about an incorrect nickname, place name, or code.
+title: "Error: "
+labels: ["data error"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: File and line
+      description: For example data/cities.csv line 120. Paste the row if you can.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is incorrect?
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correction
+      description: What must the value be?
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A URL or citation that shows the correct value.

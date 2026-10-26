@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "US Place Nicknames"
+abstract: "Nicknames for US states, counties, and cities, with one nickname on each row."
+authors:
+  - name: "US Place Nicknames contributors"
+license: CC-BY-4.0
+repository-code: "https://github.com/ToAFinish/us-place-nicknames"
+version: "1.0.0"
+date-released: "2026-10-26"
+keywords:
+  - nicknames
+  - sobriquets
+  - United States
+  - states
+  - counties
+  - cities
+  - gazetteer
